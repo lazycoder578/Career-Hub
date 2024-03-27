@@ -1,21 +1,37 @@
+import { MdLocationOn } from "react-icons/md";
+import { AiOutlineDollar } from "react-icons/ai";
 const Job = ({ job }) => {
-  const { logo, job_title, company_name, remote_or_onsite, location, job_type, salary } = job;
+  const {
+    logo,
+    job_title,
+    company_name,
+    remote_or_onsite,
+    location,
+    job_type,
+    salary,
+  } = job;
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure>
-        <img
-          src={logo}
-          alt="logo"
-        />
+        <img src={logo} alt="logo" />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{job_title}</h2>
         <p>{company_name}</p>
         <div>
-            <button className="px-5 py-2 font-extrabold border borderd border-[#7E90FE] mr-4 text-[#7E90FE]">{remote_or_onsite}</button>
-            <button className="px-5 py-2 font-extrabold border borderd border-[#7E90FE] mr-4 text-[#7E90FE]">{job_type}</button>
+          <button className="px-5 py-2 font-extrabold border borderd border-[#7E90FE] mr-4 text-[#7E90FE]">
+            {remote_or_onsite}
+          </button>
+          <button className="px-5 py-2 font-extrabold border borderd border-[#7E90FE] mr-4 text-[#7E90FE]">
+            {job_type}
+          </button>
         </div>
-        <div className="card-actions">
+
+        <div className="mt-4 flex">
+            <h2 className="flex"><MdLocationOn className="text-2xl mr-2"/>{location}</h2>
+            <h2 className="flex ml-4"><AiOutlineDollar className="text-2xl"/>{salary}</h2>
+        </div>
+        <div className="card-actions mt-4">
           <button className="btn btn-primary">View Details</button>
         </div>
       </div>
@@ -24,12 +40,3 @@ const Job = ({ job }) => {
 };
 
 export default Job;
-
-
-
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/lazycoder578/Career-Hub.git
-git push -u origin main
